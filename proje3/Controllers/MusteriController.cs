@@ -40,5 +40,13 @@ namespace proje3.Controllers
             var mus = db.TBLMUSTERİLER.Find(id);
             return View("MusteriGetir", mus);
         }
+        public ActionResult Guncelle(TBLMUSTERİLER p1)
+        {
+            var musteri = db.TBLMUSTERİLER.Find(p1.MUSTERIIDA);
+            musteri.MUSTERİAD = p1.MUSTERİAD;
+            musteri.MUSTERİSOYAD = p1.MUSTERİSOYAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
