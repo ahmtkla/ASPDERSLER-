@@ -35,5 +35,10 @@ namespace proje3.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult MusteriGetir(int id)
+        {
+            var mus = db.TBLMUSTERİLER.Find(id);
+            return View("MusteriGetir", mus);
+        }
     }
 }
