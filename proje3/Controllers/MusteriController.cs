@@ -28,5 +28,12 @@ namespace proje3.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult SIL(int id)
+        {
+            var musteri = db.TBLMUSTERİLER.Find(id);
+            db.TBLMUSTERİLER.Remove(musteri);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
